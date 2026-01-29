@@ -1,0 +1,89 @@
+@use '../abstracts/variables' as v;
+
+// Bloque (Block)
+.card {
+  background-color: v.$bg-white;
+  border: 1px solid v.$border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  font-family: v.$font-stack;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  // Elemento: Imagen
+  &__header {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Elemento: Contenedor de contenido
+  &__body {
+    padding: v.$spacing-lg;
+  }
+
+  // Elemento: Título
+  &__title {
+    font-size: 1.25rem;
+    color: v.$text-dark;
+    margin: 0 0 v.$spacing-sm 0;
+  }
+
+  // Elemento: Descripción
+  &__description {
+    font-size: 0.9rem;
+    color: v.$text-light;
+    line-height: 1.5;
+    margin-bottom: v.$spacing-md;
+  }
+
+  // Elemento: Footer (Precio y Botón)
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid v.$border-color;
+    padding: v.$spacing-md v.$spacing-lg;
+  }
+
+  &__price {
+    font-weight: bold;
+    color: v.$primary-color;
+    font-size: 1.1rem;
+  }
+
+  &__button {
+    background-color: v.$primary-color;
+    color: v.$bg-white;
+    padding: v.$spacing-sm v.$spacing-md;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    
+    &:hover {
+      background-color: darken(v.$primary-color, 10%);
+    }
+  }
+
+  // Modificador (Modifier)
+  // Estado "Destacado" para la tarjeta
+  &--featured {
+    border: 2px solid v.$primary-color;
+    
+    .card__title {
+      color: v.$primary-color;
+    }
+  }
+}
+

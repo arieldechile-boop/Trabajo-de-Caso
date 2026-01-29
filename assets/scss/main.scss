@@ -1,0 +1,17 @@
+// Importamos los parciales
+@use 'abstracts/variables';
+@use 'components/card';
+
+// Reset básico
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #e1e1e1, #212dd1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 20px;
+}
